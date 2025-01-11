@@ -1,5 +1,6 @@
 # vk
-### commands to run code
--make clean
--make
--make run
+
+### Commands to run code:
+- `make clean`
+- `make`
+- `make run`
