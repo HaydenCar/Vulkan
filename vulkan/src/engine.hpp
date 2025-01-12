@@ -9,8 +9,6 @@ public:
     void run();
 
 private:
-    // Private helper methods for Vulkan initialization, main loop, and cleanup
-    void initVulkan();
     void mainLoop();
     void cleanup();
     VkInstance instance;

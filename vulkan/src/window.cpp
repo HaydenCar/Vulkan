@@ -1,8 +1,9 @@
 #include "window.hpp"
 #include <stdexcept>
 
+// This function initialises GLFW
 void Window::initWindow(GLFWwindow* &window, uint32_t WIDTH, uint32_t HEIGHT) {
-    // Initialize GLFW
+    // Initialize GLFW with no OpenGL and non-resizable window
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
