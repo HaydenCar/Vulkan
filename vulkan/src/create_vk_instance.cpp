@@ -7,13 +7,6 @@
 #include <vector>
 #include <vulkan/vulkan_core.h>
 
-/*
-void VulkanInit::initVulkan(VkInstance& instance) {
-    // Vulkan initialization logic
-    // VulkanInit::createInstance(instance);
-}
-*/
-
 // Creates an instance of Vulkan
 void create_vk_instance(VkInstance& instance){
     // Checks if validation layers are enabled

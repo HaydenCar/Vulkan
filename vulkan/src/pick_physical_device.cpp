@@ -6,7 +6,7 @@
 #include <vulkan/vulkan_core.h>
 
 // This function picks the GPU vulkan will use
-void pick_physical_device(VkInstance &instance, VkPhysicalDevice &physicalDevice){
+void pick_physical_device(VkInstance &instance, VkPhysicalDevice &physicalDevice, VkSurfaceKHR &surface){
     uint32_t deviceCount = 0;
     vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr);
 
@@ -18,7 +18,7 @@ void pick_physical_device(VkInstance &instance, VkPhysicalDevice &physicalDevice
     vkEnumeratePhysicalDevices(instance, &deviceCount ,devices.data());
 
     for (const auto& device : devices) {
-        if (is_device_suitable(device)) {
+        if (is_device_suitable(device, surface)) {
             physicalDevice = device;
             break;
         }

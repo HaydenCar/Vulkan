@@ -4,7 +4,7 @@
 #include <vulkan/vulkan_core.h>
 
 // Find families that GPU supports
-QueueFamilyIndices find_queue_families(VkPhysicalDevice &device){
+QueueFamilyIndices find_queue_families(VkPhysicalDevice &device, VkSurfaceKHR &surface){
     QueueFamilyIndices indices;
 
     uint32_t queueFamilyCount = 0;
@@ -18,7 +18,16 @@ QueueFamilyIndices find_queue_families(VkPhysicalDevice &device){
         if (queueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT) {
             indices.graphicsFamily = i;
         }
-        if (indices.graphicsFamily.has_value()) {
+
+        VkBool32 presentSupport = false;
+        vkGetPhysicalDeviceSurfaceSupportKHR(device, i, surface, &presentSupport);
+
+        if (presentSupport) {
+            indices.presentFamily = i;
+        }
+
+
+        if (indices.isComplete()) {
             break;
         }
         i++;

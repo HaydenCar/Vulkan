@@ -1,6 +1,7 @@
 #ifndef ENGINE_HPP
 #define ENGINE_HPP
 #include <GLFW/glfw3.h>
+#include <vector>
 #include <vulkan/vulkan_core.h>
 
 class Engine {
@@ -18,6 +19,12 @@ private:
     VkDevice device;
     VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
     VkQueue graphicsQueue;
+    VkQueue presentQueue;
+    VkSurfaceKHR surface;
+    VkSwapchainKHR swapChain;
+    std::vector<VkImage> swapChainImages;
+    VkFormat swapChainImageFormat;
+    VkExtent2D swapChainExtent;
     const uint32_t WIDTH = 800;
     const uint32_t HEIGHT = 600;
 };
