@@ -1,4 +1,4 @@
-# vk
+# Vulkan
 
 ### What is this?:
 This is my repository for learning how the Vulkan API and Graphics work. This is being worked on as a learning hobby.
