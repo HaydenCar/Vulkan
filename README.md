@@ -8,7 +8,7 @@ This is my repository for learning how the Vulkan API and Graphics work. This is
 - `Vulkan Packages` - more info at [**Vulkan Docs**](https://docs.vulkan.org/tutorial/latest/02_Development_environment.html).
 - `GLFW`
 - `GLM`
-- `GLSLC` - only needed if you want to compile shaders yourself.
+- `GLSLC` 
 
 ### Commands to run code:
 - `make clean`
